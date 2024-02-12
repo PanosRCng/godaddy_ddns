@@ -1,0 +1,9 @@
+{
+    "godaddy_domains_api": {
+      "base_url": ["GODADDY_DOMAINS_API_BASE_URL", "https://test_godaddydomains_api_url"],
+      "version": ["GODADDY_DOMAINS_API_VERSION", "v1"],
+      "key": ["GODADDY_DOMAINS_API_KEY", ""],
+      "secret": ["GODADDY_DOMAINS_API_SECRET", ""],
+      "request_timeout": ["GODADDY_DOMAINS_API_REQUEST_TIMEOUT", 10]
+    }
+  }
