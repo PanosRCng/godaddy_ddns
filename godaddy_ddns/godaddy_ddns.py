@@ -43,7 +43,7 @@ def main():
 
     try:
 
-        dns_records = GodaddyDomainsApi.retrieve_dns_records(q_domain='panosrcng.com', q_type='A', q_name='@')
+        dns_records = GodaddyDomainsApi.retrieve_dns_records(q_domain=dns_record['domain'], q_type=dns_record['type'], q_name=dns_record['name'])
 
         if not needs_update(dns_records, current_ip):
             sys.exit(0)
@@ -53,7 +53,7 @@ def main():
             'ttl': 600
         }]
 
-        GodaddyDomainsApi.replace_dns_records(q_domain='panosrcng.com', q_type='A', q_name='@', dns_records=updated_dns_records)
+        GodaddyDomainsApi.replace_dns_records(q_domain=dns_record['domain'], q_type=dns_record['type'], q_name=dns_record['name'], dns_records=updated_dns_records)
 
         Logger.log(__name__, 'dns record ip updated to <{current_ip}>'.format(current_ip=current_ip))
         sys.exit(0)
